@@ -41,7 +41,7 @@ module Jekyll
 
         # Converting the content to HTML
         site = Jekyll::Site.new(@config)
-        mkconverter = site.getConverterImpl(Jekyll::Converters::Markdown)
+        mkconverter = site.find_converter_instance(Jekyll::Converters::Markdown)
         mkconverter.convert(content)
 
         return content
